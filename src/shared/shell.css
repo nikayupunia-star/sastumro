@@ -1,0 +1,21 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #0b1020; }
+
+/* Aurora-ს orb-ები z-index:-1-ზეა — wrapper-ს ცალკე stacking context სჭირდება */
+.aurora-root { isolation: isolate; }
+
+/* მთავარი გვერდი */
+.hub { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 48px 24px; color: #eef1fb; font-family: "Noto Sans Georgian", system-ui, sans-serif; background: radial-gradient(900px 500px at 80% -10%, #1d2750, transparent), radial-gradient(700px 500px at -10% 90%, #3b0d24, transparent), #0b1020; }
+.hub h1 { font-family: "Playfair Display", "Noto Sans Georgian", serif; font-size: clamp(2rem, 5vw, 3.4rem); }
+.hub > p { color: #a3acc7; margin-bottom: 20px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 340px)); gap: 24px; justify-content: center; width: 100%; max-width: 760px; }
+.hub-card { display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 24px; color: inherit; text-decoration: none; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .14); backdrop-filter: blur(10px); transition: transform .25s, border-color .25s, box-shadow .25s; }
+.hub-card:hover { transform: translateY(-6px); border-color: #f5b544; box-shadow: 0 24px 50px rgba(0, 0, 0, .45); }
+.hub-ico { font-size: 2.4rem; }
+.hub-card h2 { font-size: 1.5rem; }
+.hub-card p { color: #a3acc7; font-size: .95rem; }
+.hub-card b { margin-top: auto; color: #f5b544; }
+
+/* ფიქსირებული „უკან მთავარზე" ღილაკი საიტებზე */
+.hub-back { position: fixed; left: 16px; bottom: 16px; z-index: 1000; padding: 8px 16px; border-radius: 999px; font: 600 .85rem "Noto Sans Georgian", system-ui, sans-serif; color: #fff; text-decoration: none; background: rgba(11, 16, 32, .85); border: 1px solid rgba(255, 255, 255, .25); backdrop-filter: blur(8px); }
+.hub-back:hover { border-color: #f5b544; }
